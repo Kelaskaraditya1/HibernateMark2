@@ -1,6 +1,7 @@
 package com.StarkIndustries.HibernateMark2.Utility;
 
 import com.StarkIndustries.HibernateMark2.Keys.Keys;
+import com.StarkIndustries.HibernateMark2.Models.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -31,6 +32,11 @@ public class HibernateUtility {
             properties.put(Environment.FORMAT_SQL,true);
             properties.put(Environment.SHOW_SQL,true);
             configuration.setProperties(properties);
+
+            // Adding Tables
+
+            configuration.addAnnotatedClass(Student.class);
+
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
             sessionFactory=configuration.buildSessionFactory(serviceRegistry);
         }
