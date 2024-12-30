@@ -7,4 +7,6 @@ public class Keys {
     public static final String PASSWORD="9819375722Aditya";
     public static final String DIALECT="org.hibernate.dialect.MySQL8Dialect";
     public static final String HBM2DLL="update";
+    public static final String DATABASE_NAME="grocery";
+    public static final String STUDENT_TABLE="Student_Table";
 }
